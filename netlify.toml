@@ -1,11 +1,11 @@
 [build]
-  base = "artifacts/api-server"
-  command = "pnpm install && pnpm run build"
-  publish = "dist"
+  base = "" # Change this to empty so we start at the root
+  command = "pnpm install && pnpm run build" 
+  publish = "artifacts/api-server/dist"
 
 [functions]
-  # This is the new way to write it
-  node_bundle = {} 
+  directory = "artifacts/api-server/dist"
+  node_bundle = {}
 
 [[redirects]]
   from = "/*"
