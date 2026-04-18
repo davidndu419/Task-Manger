@@ -1,0 +1,11 @@
+[build]
+  command = "pnpm install && cd artifacts/api-server && pnpm run build"
+  publish = "artifacts/api-server/dist"
+
+[functions]
+  node_bundle = true
+
+[[redirects]]
+  from = "/*"
+  to = "/.netlify/functions/index"
+  status = 200
