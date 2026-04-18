@@ -1,6 +1,6 @@
 import express, { type Express, type Request, type Response } from "express";
 import cors from "cors";
-import { pinoHttp } from "pino-http"; // Changed from 'import pinoHttp' to '{ pinoHttp }'
+const pinoHttp = require("pino-http"); // Use 'require' to bypass the ESM/TS callable error
 import router from "./routes";
 import { logger } from "./lib/logger";
 
@@ -10,20 +10,20 @@ app.use(
   pinoHttp({
     logger,
     serializers: {
-      req(req: any) { // Changing :Request to :any here temporarily to bypass the Vercel crash
+      req(req: any) { // Keep :any to stop the "Implicit Any" scream
         return {
           id: req.id,
           method: req.method,
           url: req.url?.split("?")[0]
         };
       },
-      res(res: Response) {
+      res(res: any) {
         return {
           statusCode: res.statusCode,
         };
       },
     },
-  }),
+  })
 );
 app.use(cors());
 app.use(express.json());
