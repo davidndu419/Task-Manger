@@ -1,0 +1,61 @@
+Design and implement a scalable, modular To-Do List Application with Intelligent Reminder System following modern software engineering principles.
+
+Core Features:
+	•	Full task lifecycle management (Create, Read, Update, Delete)
+	•	Task attributes: title, description, priority level, deadline, category, and status
+	•	Smart reminder system with:
+	•	Scheduled notifications (based on deadline)
+	•	Pre-deadline alerts (e.g., 10 mins, 1 hour before)
+	•	Recurring reminders for unfinished tasks
+	•	Task prioritization and automatic sorting (by urgency and importance)
+
+Advanced Functional Requirements:
+	•	Implement local persistence using a database (SQLite/MySQL)
+	•	Use multithreading or background services for handling reminders without blocking the UI
+	•	Design a notification engine that triggers alerts even when the app is idle
+	•	Include search, filtering, and categorization of tasks
+	•	Provide analytics dashboard (e.g., completed vs pending tasks, productivity trends)
+
+System Design Requirements:
+	•	Follow Object-Oriented Programming (OOP) principles:
+	•	Encapsulation (Task class, Reminder class, User class)
+	•	Inheritance and polymorphism where applicable
+	•	Apply MVC architecture (Model-View-Controller)
+	•	Ensure clean separation of concerns
+
+User Interface:
+	•	Build a responsive and intuitive GUI (Java Swing/JavaFX or Web UI)
+	•	Include:
+	•	Task dashboard
+	•	Calendar view (optional advanced feature)
+	•	Real-time updates when tasks are added or modified
+
+Notification System:
+	•	Trigger pop-up alerts, sound notifications, or system notifications
+	•	Handle edge cases:
+	•	Missed deadlines
+	•	App closed/reopened
+
+Performance & Reliability:
+	•	Optimize for low memory usage
+	•	Ensure data integrity and error handling
+	•	Implement input validation and exception handling
+
+Demo Requirements:
+	•	Demonstrate:
+	•	Task creation with deadline
+	•	Automatic reminder triggering
+	•	Editing and completing tasks
+	•	Handling overdue tasks
+
+Bonus (High Distinction Level):
+	•	Cloud sync or backup system
+	•	User authentication (login/signup)
+	•	AI-based task suggestion or smart scheduling
+	•	Integration with calendar APIs
+
+Deliverables:
+	•	Fully functional application
+	•	Source code with proper documentation
+	•	UML diagrams (Class Diagram, Use Case Diagram)
+	•	Short report explaining system architecture and design decisions
