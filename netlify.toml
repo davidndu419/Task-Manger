@@ -4,12 +4,11 @@
 
 [functions]
   directory = "artifacts/api-server/dist"
-  # This is the magic fix:
-  node_bundle = true
-  # We also include your shared workspace library
-  external_node_modules = ["@workspace/api-zod"]
+  # This fixes the "must be an object" error
+  node_bundle = {} 
+  external_node_modules = ["express", "pino", "pino-http", "cors", "serverless-http"]
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/sever"
+  to = "/.netlify/functions/server"
   status = 200
