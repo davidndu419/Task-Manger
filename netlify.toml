@@ -4,12 +4,8 @@
 
 [functions]
   directory = "artifacts/api-server/dist"
-  # This tells Netlify to use esbuild to bundle all sub-modules into server.js
-  node_bundle = true
-  # This ensures the external libraries are also pulled in correctly
   external_node_modules = ["express", "pino", "pino-http", "cors", "serverless-http"]
 
-[[redirects]]
-  from = "/*"
-  to = "/.netlify/functions/server"
-  status = 200
+[functions.node_bundle]
+  # This empty section satisfies the "must be an object" rule 
+  # and triggers the esbuild bundler we need.
