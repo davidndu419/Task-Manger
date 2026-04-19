@@ -1,7 +1,7 @@
 import express, { type Express, type Request, type Response } from "express";
 import cors from "cors";
 const pinoHttp = require("pino-http"); // Use 'require' to bypass the ESM/TS callable error
-import router from "./routes";
+import router from "./routes/index";
 import { logger } from "./lib/logger";
 
 const app: Express = express();

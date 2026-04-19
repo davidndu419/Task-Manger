@@ -1,13 +1,15 @@
 [build]
-  # We added --no-frozen-lockfile here
   command = "pnpm install --no-frozen-lockfile && pnpm --filter ./lib/api-zod run build && pnpm --filter ./artifacts/api-server run build"
   publish = "artifacts/api-server/dist"
 
 [functions]
   directory = "artifacts/api-server/dist"
-  node_bundle = {}
+  # This is the magic fix:
+  node_bundle = true
+  # We also include your shared workspace library
+  external_node_modules = ["@workspace/api-zod"]
 
 [[redirects]]
   from = "/*"
-  to = "/.netlify/functions/index"
+  to = "/.netlify/functions/sever"
   status = 200
