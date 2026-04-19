@@ -1,6 +1,6 @@
 [build]
-  # We stay at the root so pnpm can see the /lib folder
-  command = "pnpm install && pnpm --filter @workspace/api-zod run build && pnpm --filter @workspace/api-server run build"
+  # We added --no-frozen-lockfile here
+  command = "pnpm install --no-frozen-lockfile && pnpm --filter ./lib/api-zod run build && pnpm --filter ./artifacts/api-server run build"
   publish = "artifacts/api-server/dist"
 
 [functions]
@@ -9,5 +9,5 @@
 
 [[redirects]]
   from = "/*"
-  to = "/index"
+  to = "/.netlify/functions/index"
   status = 200
