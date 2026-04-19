@@ -4,8 +4,9 @@
 
 [functions]
   directory = "artifacts/api-server/dist"
-  # This fixes the "must be an object" error
-  node_bundle = {} 
+  # This tells Netlify to use esbuild to bundle all sub-modules into server.js
+  node_bundle = true
+  # This ensures the external libraries are also pulled in correctly
   external_node_modules = ["express", "pino", "pino-http", "cors", "serverless-http"]
 
 [[redirects]]
