@@ -4,8 +4,9 @@
 
 [functions]
   directory = "artifacts/api-server/dist"
-  # This makes Netlify bundle EVERYTHING into server.js
-  node_bundle = true 
+
+[functions.node_bundle]
+  external_node_modules = ["express", "pino", "pino-http", "cors", "serverless-http"]
 
 [[redirects]]
   from = "/*"
