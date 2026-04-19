@@ -4,8 +4,12 @@
 
 [functions]
   directory = "artifacts/api-server/dist"
-  external_node_modules = ["express", "pino", "pino-http", "cors", "serverless-http"]
 
 [functions.node_bundle]
-  # This empty section satisfies the "must be an object" rule 
-  # and triggers the esbuild bundler we need.
+
+[[redirects]]
+  # This forces EVERY request to go to your server function
+  from = "/*"
+  to = "/.netlify/functions/server"
+  status = 200
+  force = true
