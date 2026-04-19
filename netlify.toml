@@ -4,11 +4,10 @@
 
 [functions]
   directory = "artifacts/api-server/dist"
-
-[functions.node_bundle]
+  # This makes Netlify bundle EVERYTHING into server.js
+  node_bundle = true 
 
 [[redirects]]
-  # This forces EVERY request to go to your server function
   from = "/*"
   to = "/.netlify/functions/server"
   status = 200
